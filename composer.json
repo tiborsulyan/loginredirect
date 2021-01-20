@@ -1,0 +1,44 @@
+{
+  "name": "tiborsulyan/loginredirect",
+  "description": "Redirect users to login page if needed",
+  "keywords": [
+    "flarum",
+    "login",
+    "redirect"
+  ],
+  "type": "flarum-extension",
+  "license": "MIT",
+  "require": {
+    "flarum/core": ">=0.1.0-beta.15 <0.1.0-beta.16"
+  },
+  "authors": [
+    {
+      "name": "Tibor Sulyán",
+      "email": "sulyan.tibor@gmail.com",
+      "role": "Developer"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/tiborsulyan/loginredirect/issues",
+    "source": "https://github.com/tiborsulyan/loginredirect"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tiborsulyan\\LoginRedirect\\": "src/"
+    }
+  },
+  "extra": {
+    "flarum-extension": {
+      "title": "Login Redirect",
+      "category": "feature",
+      "icon": {
+        "name": "fas fa-sign-out",
+        "backgroundColor": "",
+        "color": ""
+      }
+    },
+    "flagrow": {
+      "discuss": ""
+    }
+  }
+}
