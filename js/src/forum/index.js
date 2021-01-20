@@ -16,7 +16,6 @@ app.initializers.add('tiborsulyan/loginredirect', () => {
         const notfound = urlParams.get('notfound');
         const dest = urlParams.get('dest');
         if (!app.session.user) {
-            console.log(location.pathname);
             if (notfound && dest || isEmpty(app.previous.data) && location.pathname === "/") {
                 setTimeout(() => app.modal.show(LogInModal));
             }
