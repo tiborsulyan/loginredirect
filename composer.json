@@ -25,7 +25,10 @@
   "autoload": {
     "psr-4": {
       "Tiborsulyan\\LoginRedirect\\": "src/"
-    }
+    },
+    "files": [
+      "overrides/Api/Controller/ShowUserController.php"
+    ]
   },
   "extra": {
     "flarum-extension": {

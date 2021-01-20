@@ -15,12 +15,9 @@ app.initializers.add('tiborsulyan/loginredirect', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const notfound = urlParams.get('notfound');
         const dest = urlParams.get('dest');
-        console.log("current.type", app.current.type);
-        console.log("current.data", app.current.data);
-        console.log("prev.type", app.previous.type);
-        console.log("prev.data", app.previous.data);
         if (!app.session.user) {
-            if (notfound && dest || isEmpty(app.previous.data) && location.path === "/") {
+            console.log(location.pathname);
+            if (notfound && dest || isEmpty(app.previous.data) && location.pathname === "/") {
                 setTimeout(() => app.modal.show(LogInModal));
             }
         } else if (notfound && dest) {
@@ -32,11 +29,18 @@ app.initializers.add('tiborsulyan/loginredirect', () => {
         const urlParams = new URLSearchParams(window.location.search);
         const notfound = urlParams.get('notfound');
         const dest = urlParams.get('dest');
-        if (!app.session.user && notfound && dest) {
-            this.alertAttrs = {
-                type: 'warning',
-                content: app.translator.trans('tiborsulyan-loginredirect.forum.login-message')
-            };
+        if (!app.session.user) {
+            if (notfound && dest) {
+                this.alertAttrs = {
+                    type: 'warning',
+                    content: app.translator.trans('tiborsulyan-loginredirect.forum.login-message')
+                };
+            } else if (location.pathname === "/") {
+                this.alertAttrs = {
+                    type: 'warning',
+                    content: app.translator.trans('tiborsulyan-loginredirect.forum.login-frontpage-message')
+                };
+            }
         }
     });
 
