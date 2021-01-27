@@ -2,9 +2,6 @@ import app from 'flarum/app';
 import LogInModal from 'flarum/components/LogInModal';
 import {extend} from 'flarum/extend';
 import Page from "flarum/components/Page";
-import NotificationGrid from "flarum/components/NotificationGrid";
-import icon from "flarum/common/helpers/icon";
-import Checkbox from "flarum/components/Checkbox";
 
 /* global m */
 
